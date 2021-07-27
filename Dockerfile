@@ -2,7 +2,7 @@ FROM python:3.9.6-alpine3.13 as base
 
 # Install dependencies
 FROM base as dependencies
-COPY requirements.txt ./
+COPY requirements.txt /
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run tests
