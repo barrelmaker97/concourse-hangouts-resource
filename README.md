@@ -17,7 +17,7 @@ resource_types:
 
 ## Resource Configuration
 
-* `webhook_url`: _Required - (String)_. The webhook generated for Hangouts channel. (i.e. "https://chat.googleapis.com/v1/spaces/ABC/messages?key=DEF)
+* `webhook_url`: _Required - (String)_. The webhook generated for Hangouts channel. (i.e. https://chat.googleapis.com/v1/spaces/ABC/messages?key=DEF)
 
 ### Example
 
@@ -94,10 +94,6 @@ This is a working example of a pipeline file that does absolutely nothing other 
 You can test it as is after passing `webhook_url` while setting up the pipeline or replacing `((webhook_url))` in place with the webhook URL.
 ```yaml
 ---
-groups:
-  - name: Test Group
-    jobs:
-      - Test_Job
 resource_types:
   - name: hangouts-resource
     type: docker-image
@@ -111,7 +107,7 @@ resources:
     source:
       webhook_url: ((webhook_url))
 jobs:
-  - name: Test_Job
+  - name: test-job
     plan:
       - put: hangouts
         params:
