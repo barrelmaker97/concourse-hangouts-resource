@@ -89,7 +89,7 @@ jobs:
 ```
 
 ## Complete Example:
-This is a working example of a pipeline file that does absolutely nothing other then posting to Hangouts.
+This is a working example of a pipeline file that does absolutely nothing other than posting to Hangouts.
 
 You can test it as is after passing `webhook_url` while setting up the pipeline or replacing `((webhook_url))` in place with the webhook URL.
 ```yaml
