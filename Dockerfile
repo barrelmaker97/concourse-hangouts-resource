@@ -1,4 +1,4 @@
-FROM python:3.14.1-alpine as base
+FROM python:3.15.0a2-alpine as base
 
 # Install dependencies
 FROM base as dependencies
