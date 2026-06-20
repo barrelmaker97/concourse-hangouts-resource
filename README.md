@@ -116,6 +116,22 @@ jobs:
           create_thread: false
 ```
 
+## Testing
+
+Default tests are deterministic and offline. Unit tests mock all HTTP requests and do not depend on external services.
+
+Run the default test suite:
+
+```bash
+pytest
+```
+
+Optional live integration tests are marked with `integration` and require a real webhook URL:
+
+```bash
+INTEGRATION_WEBHOOK_URL='https://chat.googleapis.com/...' pytest -m integration
+```
+
 ## License
 
 BSD 2-Clause

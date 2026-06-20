@@ -6,6 +6,8 @@ import requests
 import pathlib
 import urllib
 
+REQUEST_TIMEOUT_SECONDS = 10
+
 
 # Construct the webhook request and send it.
 def send(url, msg, create_thread):
@@ -18,7 +20,9 @@ def send(url, msg, create_thread):
         query.update(params)
         url_parts[4] = urllib.parse.urlencode(query)
         url = urllib.parse.urlunparse(url_parts)
-    response = requests.post(url, json=body, headers=headers)
+    response = requests.post(
+        url, json=body, headers=headers, timeout=REQUEST_TIMEOUT_SECONDS
+    )
     response.raise_for_status()
     return (response.status_code, response.text)
 
